@@ -31,14 +31,14 @@ class Hall(Star_cinema) :
     def book_seats(self, customer_name, phone_number, id, list_of_seats):
         self.__customer_name = customer_name
         self.__phone_number = phone_number
-        self.__id = id
+        self.__input_id = id
         self.successful = []
         self.invalid =[]
         self.booked_failed =[]
         try :
-            if(self.__seats[self.__id]):
+            if(self.__seats[self.__input_id]):
 
-                seats_available = self.__seats[self.__id]
+                seats_available = self.__seats[self.__input_id]
                 for i,j in list_of_seats:
                     if (0<=i<=self.__rows) and (0 <= j <= self.__cols):
                         if seats_available[i][j]==0:
@@ -63,7 +63,7 @@ class Hall(Star_cinema) :
             print("\t##### TICKET BOOKED SUCCESSFULLY ##### \t")
             print('---------------------------------------------------------------------------------------')
             print(f'Name: {self.__customer_name} \t Phone number :{self.__phone_number} ')
-            print(f'Hall id: {self.__hall_no} \t Show id :{self.__id} \t Movie time {self.__time} ')
+            print(f'Hall id: {self.__hall_no} \t Show id :{self.__input_id} \t Movie time {self.__time} ')
            
             print("Successful Booked seat list are!  ")
             for i,j in self.successful :
