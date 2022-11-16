@@ -94,12 +94,17 @@ class Hall(Star_cinema) :
                 print("Yes for available seat and No! for unavailable seat")
                 print('---------------------------------------------------------------------------------------')
                 seat_plan = self.__seats[id]
+                co_row =0
+                co_col =0
                 for _ in seat_plan :
+                    co_row+=1
                     for j in _ :
+                        co_col+=1
                         if j ==0:
-                            print("Yes\t", end="")
+                            print(f"{co_row},{co_col}\t", end=" ")
                         else :
-                            print("No!\t", end="")
+                            print("XX!\t", end=" ")
+                    co_col = 0
                     print("\n")
 
         
